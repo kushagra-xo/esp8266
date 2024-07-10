@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>ESP8266 Web Server</title>
+	<link rel="stylesheet" type="text/css" href="/main.css">
+</head>
+
+<body>
+	<div class="container">
+		<h1>Hello from ESP8266!</h1>
+		<button class="button" onclick="toggleLED()">Toggle LED</button>
+	</div>
+	<script>
+		function toggleLED() {
+			fetch("/toggle").then(response => response.text()).then(data => {
+				alert(data);
+			});
+		}
+	</script>
+</body>
+
+</html>
